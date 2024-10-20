@@ -6,8 +6,8 @@ import {
 } from 'graphql';
 import PermissionType from './Permission';
 
-const RolType = new GraphQLObjectType({
-  name: 'Rol',
+const RoleType = new GraphQLObjectType({
+  name: 'Role',
   fields: () => ({
     id: { type: GraphQLID },
     nombre: { type: GraphQLString },
@@ -15,4 +15,4 @@ const RolType = new GraphQLObjectType({
   }),
 });
 
-export default RolType;
+export default RoleType;

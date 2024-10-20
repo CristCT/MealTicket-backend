@@ -52,8 +52,8 @@ mealticket-backend/
 │   │   └── schema.js               # Esquema principal que une resolvers
 │   ├── resolvers/
 │   │   ├── usuarioResolver.js      # Resolver para usuarios
-│   │   ├── rolResolver.js          # Resolver para roles
-│   │   ├── permissionResolver.js      # Resolver para permisos
+│   │   ├── roleResolver.js         # Resolver para roles
+│   │   ├── permissionResolver.js   # Resolver para permisos
 │   │   └── index.js                # Combina todos los resolvers
 │   └── types/
 │       ├── Usuario.js              # Definición del tipo Usuario
@@ -64,7 +64,7 @@ mealticket-backend/
 │   └── auth.js                     # Middleware de autenticación JWT
 │
 ├── models/
-│   ├── Permiso.js                  # Modelo de MongoDB para permisos
+│   ├── Permission.js               # Modelo de MongoDB para permisos
 │   ├── Rol.js                      # Modelo de MongoDB para roles
 │   └── Usuario.js                  # Modelo de MongoDB para usuarios
 │

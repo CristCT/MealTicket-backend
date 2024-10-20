@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
-const rolSchema = new Schema({
+const roleSchema = new Schema({
   nombre: {
     type: String,
     required: true,
@@ -15,6 +15,6 @@ const rolSchema = new Schema({
   ],
 });
 
-const Rol = mongoose.model('Rol', rolSchema);
+const Role = mongoose.model('Role', roleSchema);
 
-export default Rol;
+export default Role;

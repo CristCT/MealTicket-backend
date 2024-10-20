@@ -4,7 +4,7 @@ import {
   GraphQLString,
   GraphQLList,
 } from 'graphql';
-import RolType from './Rol';
+import RoleType from './Role';
 
 const UsuarioType = new GraphQLObjectType({
   name: 'Usuario',
@@ -12,7 +12,7 @@ const UsuarioType = new GraphQLObjectType({
     id: { type: GraphQLID },
     username: { type: GraphQLString },
     email: { type: GraphQLString },
-    roles: { type: new GraphQLList(RolType) },
+    roles: { type: new GraphQLList(RoleType) },
   }),
 });
 

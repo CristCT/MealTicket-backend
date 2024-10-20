@@ -1,29 +1,29 @@
-import Rol from '../../models/Rol';
-import RolType from '../types/Rol';
+import Role from '../../models/Role';
+import RoleType from '../types/Role';
 import { GraphQLID, GraphQLString } from 'graphql';
 
-const rolResolver = {
+const roleResolver = {
   Query: {
-    rol: {
-      type: RolType,
+    role: {
+      type: RoleType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return Rol.findById(args.id).populate('permissions');
+        return Role.findById(args.id).populate('permissions');
       },
     },
   },
   Mutation: {
-    crearRol: {
-      type: RolType,
+    crearRole: {
+      type: RoleType,
       args: {
         nombre: { type: GraphQLString },
       },
       resolve(parent, args) {
-        const nuevoRol = new Rol({ nombre: args.nombre });
-        return nuevoRol.save();
+        const newRole = new Role({ nombre: args.nombre });
+        return newRole.save();
       },
     },
   },
 };
 
-export default rolResolver;
+export default roleResolver;
