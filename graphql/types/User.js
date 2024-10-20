@@ -6,7 +6,7 @@ import {
 } from 'graphql';
 import RoleType from './Role';
 
-const UsuarioType = new GraphQLObjectType({
+const UserType = new GraphQLObjectType({
   name: 'Usuario',
   fields: () => ({
     id: { type: GraphQLID },
@@ -16,4 +16,4 @@ const UsuarioType = new GraphQLObjectType({
   }),
 });
 
-export default UsuarioType;
+export default UserType;

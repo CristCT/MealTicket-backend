@@ -1,22 +1,22 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import Usuario from '../../models/Usuario';
-import UsuarioType from '../types/Usuario';
+import User from '../../models/User';
+import UserType from '../types/User';
 import { GraphQLString, GraphQLID } from 'graphql';
 
-const usuarioResolver = {
+const userResolver = {
   Query: {
-    usuario: {
-      type: UsuarioType,
+    user: {
+      type: UserType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return Usuario.findById(args.id).populate('roles');
+        return User.findById(args.id).populate('roles');
       },
     },
   },
   Mutation: {
-    registrarUsuario: {
-      type: UsuarioType,
+    registerUser: {
+      type: UserType,
       args: {
         username: { type: GraphQLString },
         email: { type: GraphQLString },
@@ -29,40 +29,40 @@ const usuarioResolver = {
           );
         }
 
-        const usuarioExistente = await Usuario.findOne({ email: args.email });
-        if (usuarioExistente) {
+        const UserExistente = await User.findOne({ email: args.email });
+        if (UserExistente) {
           throw new Error('El correo ya está registrado');
         }
 
         const hashedPassword = await bcrypt.hash(args.password, 10);
-        const nuevoUsuario = new Usuario({
+        const newUser = new User({
           username: args.username,
           email: args.email,
           password: hashedPassword,
         });
 
-        return nuevoUsuario.save();
+        return newUser.save();
       },
     },
-    loginUsuario: {
+    loginUser: {
       type: GraphQLString,
       args: {
         email: { type: GraphQLString },
         password: { type: GraphQLString },
       },
       async resolve(parent, args) {
-        const usuario = await Usuario.findOne({ email: args.email });
-        if (!usuario) {
+        const user = await User.findOne({ email: args.email });
+        if (!user) {
           throw new Error('Usuario no encontrado');
         }
 
-        const esValido = await bcrypt.compare(args.password, usuario.password);
-        if (!esValido) {
+        const isValid = await bcrypt.compare(args.password, user.password);
+        if (!isValid) {
           throw new Error('Contraseña incorrecta');
         }
 
         const token = jwt.sign(
-          { id: usuario._id, email: usuario.email },
+          { id: user._id, email: user.email },
           process.env.JWT_SECRET,
           {
             expiresIn: '1h',
@@ -75,4 +75,4 @@ const usuarioResolver = {
   },
 };
 
-export default usuarioResolver;
+export default userResolver;

@@ -1,31 +1,31 @@
-import Permiso from '../../models/Permission';
-import PermisoType from '../types/Permission';
+import Permission from '../../models/Permission';
+import PermissionType from '../types/Permission';
 import { GraphQLID, GraphQLString } from 'graphql';
 
 const permissionResolver = {
   Query: {
     permission: {
-      type: PermisoType,
+      type: PermissionType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return Permiso.findById(args.id);
+        return Permission.findById(args.id);
       },
     },
   },
   Mutation: {
-    crearPermiso: {
-      type: PermisoType,
+    createPermission: {
+      type: PermissionType,
       args: {
-        nombre: { type: GraphQLString },
-        descripcion: { type: GraphQLString },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
       },
       resolve(parent, args) {
-        const nuevoPermiso = new Permiso({
-          nombre: args.nombre,
-          descripcion: args.descripcion,
+        const newPermission = new Permission({
+          name: args.name,
+          description: args.description,
         });
 
-        return nuevoPermiso.save();
+        return newPermission.save();
       },
     },
   },

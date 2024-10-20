@@ -16,10 +16,10 @@ const roleResolver = {
     crearRole: {
       type: RoleType,
       args: {
-        nombre: { type: GraphQLString },
+        name: { type: GraphQLString },
       },
       resolve(parent, args) {
-        const newRole = new Role({ nombre: args.nombre });
+        const newRole = new Role({ name: args.name });
         return newRole.save();
       },
     },

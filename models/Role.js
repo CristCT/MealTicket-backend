@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
 const roleSchema = new Schema({
-  nombre: {
+  name: {
     type: String,
     required: true,
     unique: true,
@@ -10,7 +10,7 @@ const roleSchema = new Schema({
   permissions: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Permiso',
+      ref: 'Permission',
     },
   ],
 });

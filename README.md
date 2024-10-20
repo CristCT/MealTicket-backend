@@ -51,13 +51,13 @@ mealticket-backend/
 │   ├── schema/
 │   │   └── schema.js               # Esquema principal que une resolvers
 │   ├── resolvers/
-│   │   ├── usuarioResolver.js      # Resolver para usuarios
+│   │   ├── UserResolver.js         # Resolver para usuarios
 │   │   ├── roleResolver.js         # Resolver para roles
 │   │   ├── permissionResolver.js   # Resolver para permisos
 │   │   └── index.js                # Combina todos los resolvers
 │   └── types/
-│       ├── Usuario.js              # Definición del tipo Usuario
-│       ├── Rol.js                  # Definición del tipo Rol
+│       ├── User.js                 # Definición del tipo Usuario
+│       ├── Role.js                 # Definición del tipo Rol
 │       └── Permiso.js              # Definición del tipo Permiso
 │
 ├── middlewares/
@@ -65,8 +65,8 @@ mealticket-backend/
 │
 ├── models/
 │   ├── Permission.js               # Modelo de MongoDB para permisos
-│   ├── Rol.js                      # Modelo de MongoDB para roles
-│   └── Usuario.js                  # Modelo de MongoDB para usuarios
+│   ├── Role.js                     # Modelo de MongoDB para roles
+│   └── User.js                     # Modelo de MongoDB para usuarios
 │
 ├── .env                            # Variables de entorno
 ├── .eslintrc.json                  # Configuración de ESLint

@@ -4,8 +4,8 @@ const PermissionType = new GraphQLObjectType({
   name: 'Permission',
   fields: () => ({
     id: { type: GraphQLID },
-    nombre: { type: GraphQLString },
-    descripcion: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
   }),
 });
 

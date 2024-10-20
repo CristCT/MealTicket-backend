@@ -2,17 +2,17 @@ import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
 const permissionSchema = new Schema({
-  nombre: {
+  name: {
     type: String,
     required: true,
     unique: true,
   },
-  descripcion: {
+  description: {
     type: String,
     required: false,
   },
 });
 
-const Permiso = mongoose.model('Permiso', permissionSchema);
+const Permiso = mongoose.model('Permission', permissionSchema);
 
 export default Permiso;

@@ -1,8 +1,8 @@
 import { merge } from 'lodash';
-import usuarioResolver from './usuarioResolver';
+import userResolver from './userResolver';
 import roleResolver from './roleResolver';
 import permissionResolver from './permissionResolver';
 
-const resolvers = merge(usuarioResolver, roleResolver, permissionResolver);
+const resolvers = merge(userResolver, roleResolver, permissionResolver);
 
 export default resolvers;
