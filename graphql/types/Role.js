@@ -4,7 +4,7 @@ import {
   GraphQLString,
   GraphQLList,
 } from 'graphql';
-import PermissionType from './Permission';
+import PermissionType from './Permission.js';
 
 const RoleType = new GraphQLObjectType({
   name: 'Role',

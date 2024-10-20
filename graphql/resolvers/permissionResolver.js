@@ -1,5 +1,5 @@
-import Permission from '../../models/Permission';
-import PermissionType from '../types/Permission';
+import Permission from '../../models/Permission.js';
+import PermissionType from '../types/Permission.js';
 import { GraphQLID, GraphQLString } from 'graphql';
 
 const permissionResolver = {

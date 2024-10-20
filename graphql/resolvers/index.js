@@ -1,7 +1,9 @@
-import { merge } from 'lodash';
-import userResolver from './userResolver';
-import roleResolver from './roleResolver';
-import permissionResolver from './permissionResolver';
+import _ from 'lodash';
+import userResolver from './userResolver.js';
+import roleResolver from './roleResolver.js';
+import permissionResolver from './permissionResolver.js';
+
+const { merge } = _;
 
 const resolvers = merge(userResolver, roleResolver, permissionResolver);
 

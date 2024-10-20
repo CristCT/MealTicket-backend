@@ -4,7 +4,7 @@ const authMiddleware = (req, res, next) => {
   if (
     req.method === 'POST' &&
     req.body.query &&
-    req.body.query.includes('loginUsuario')
+    req.body.query.includes('loginUser')
   ) {
     return next();
   }

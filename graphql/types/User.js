@@ -4,10 +4,10 @@ import {
   GraphQLString,
   GraphQLList,
 } from 'graphql';
-import RoleType from './Role';
+import RoleType from './Role.js';
 
 const UserType = new GraphQLObjectType({
-  name: 'Usuario',
+  name: 'User',
   fields: () => ({
     id: { type: GraphQLID },
     username: { type: GraphQLString },

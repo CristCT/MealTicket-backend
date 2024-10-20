@@ -1,5 +1,5 @@
-import Role from '../../models/Role';
-import RoleType from '../types/Role';
+import Role from '../../models/Role.js';
+import RoleType from '../types/Role.js';
 import { GraphQLID, GraphQLString } from 'graphql';
 
 const roleResolver = {
@@ -13,7 +13,7 @@ const roleResolver = {
     },
   },
   Mutation: {
-    crearRole: {
+    createRole: {
       type: RoleType,
       args: {
         name: { type: GraphQLString },

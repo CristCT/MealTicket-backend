@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import connectDB from './config/db';
+import connectDB from './config/db.js';
 import { createHandler } from 'graphql-http/lib/use/express';
-import graphqlPlayground from 'graphql-playground-middleware-express';
-import authMiddleware from './middlewares/auth';
-import schema from './graphql/schema/schema';
+import { renderPlaygroundPage } from 'graphql-playground-html';
+import authMiddleware from './middlewares/auth.js';
+import schema from './graphql/schema/schema.js';
 import 'dotenv/config';
 
 const app = express();
@@ -22,7 +22,9 @@ app.use(
   })
 );
 
-app.get('/playground', graphqlPlayground({ endpoint: '/graphql' }));
+app.get('/playground', (req, res) => {
+  res.send(renderPlaygroundPage({ endpoint: '/graphql' }));
+});
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

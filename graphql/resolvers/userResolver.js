@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../../models/User';
-import UserType from '../types/User';
+import User from '../../models/User.js';
+import UserType from '../types/User.js';
 import { GraphQLString, GraphQLID } from 'graphql';
 
 const userResolver = {

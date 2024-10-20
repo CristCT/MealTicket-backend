@@ -1,5 +1,5 @@
 import { GraphQLSchema, GraphQLObjectType } from 'graphql';
-import resolvers from '../resolvers.js';
+import resolvers from '../resolvers/index.js';
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
