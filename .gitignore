@@ -1,0 +1,20 @@
+# Ignorar la carpeta node_modules
+node_modules
+
+# Ignorar las carpetas de construcción y distribución
+build
+dist
+
+# Ignorar configuraciones específicas de Visual Studio Code
+.vscode
+
+# Ignorar archivo de variables de entorno
+.env
+
+# Ignorar archivos de logs
+*.log
+logs/
+npm-debug.log*
+
+# Ignorar configuraciones de npm
+.npmrc
