@@ -58,7 +58,7 @@ mealticket-backend/
 │   └── types/
 │       ├── User.js                 # Definición del tipo Usuario
 │       ├── Role.js                 # Definición del tipo Rol
-│       └── Permiso.js              # Definición del tipo Permiso
+│       └── Permission.js           # Definición del tipo Permiso
 │
 ├── middlewares/
 │   └── auth.js                     # Middleware de autenticación JWT
