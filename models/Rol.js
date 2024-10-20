@@ -7,7 +7,7 @@ const rolSchema = new Schema({
     required: true,
     unique: true,
   },
-  permisos: [
+  permissions: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Permiso',

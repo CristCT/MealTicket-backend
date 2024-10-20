@@ -1,10 +1,10 @@
-import Permiso from '../../models/Permiso';
-import PermisoType from '../types/Permiso';
+import Permiso from '../../models/Permission';
+import PermisoType from '../types/Permission';
 import { GraphQLID, GraphQLString } from 'graphql';
 
-const permisoResolver = {
+const permissionResolver = {
   Query: {
-    permiso: {
+    permission: {
       type: PermisoType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
@@ -31,4 +31,4 @@ const permisoResolver = {
   },
 };
 
-export default permisoResolver;
+export default permissionResolver;

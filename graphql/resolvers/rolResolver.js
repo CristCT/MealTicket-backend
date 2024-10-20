@@ -8,7 +8,7 @@ const rolResolver = {
       type: RolType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return Rol.findById(args.id).populate('permisos');
+        return Rol.findById(args.id).populate('permissions');
       },
     },
   },

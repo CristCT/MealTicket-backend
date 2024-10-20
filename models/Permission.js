@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
-const permisoSchema = new Schema({
+const permissionSchema = new Schema({
   nombre: {
     type: String,
     required: true,
@@ -13,6 +13,6 @@ const permisoSchema = new Schema({
   },
 });
 
-const Permiso = mongoose.model('Permiso', permisoSchema);
+const Permiso = mongoose.model('Permiso', permissionSchema);
 
 export default Permiso;

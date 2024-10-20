@@ -53,7 +53,7 @@ mealticket-backend/
 │   ├── resolvers/
 │   │   ├── usuarioResolver.js      # Resolver para usuarios
 │   │   ├── rolResolver.js          # Resolver para roles
-│   │   ├── permisoResolver.js      # Resolver para permisos
+│   │   ├── permissionResolver.js      # Resolver para permisos
 │   │   └── index.js                # Combina todos los resolvers
 │   └── types/
 │       ├── Usuario.js              # Definición del tipo Usuario

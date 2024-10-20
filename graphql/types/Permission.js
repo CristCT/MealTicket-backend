@@ -1,7 +1,7 @@
 import { GraphQLObjectType, GraphQLID, GraphQLString } from 'graphql';
 
-const PermisoType = new GraphQLObjectType({
-  name: 'Permiso',
+const PermissionType = new GraphQLObjectType({
+  name: 'Permission',
   fields: () => ({
     id: { type: GraphQLID },
     nombre: { type: GraphQLString },
@@ -9,4 +9,4 @@ const PermisoType = new GraphQLObjectType({
   }),
 });
 
-export default PermisoType;
+export default PermissionType;
