@@ -19,7 +19,7 @@ const authMiddleware = (req, res, next) => {
     req.user = verified;
     next();
   } catch (err) {
-    res.status(401).send('Token inválido o expirado.');
+    res.status(401).send('Token no válido');
   }
 };
 
