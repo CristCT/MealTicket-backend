@@ -20,6 +20,7 @@
     "graphql-http": "^1.22.1",
     "graphql-playground-html": "^1.6.30",
     "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "mongoose": "^8.7.2"
   },
   "devDependencies": {
