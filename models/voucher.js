@@ -11,7 +11,7 @@ const voucherSchema = new Schema(
     serviceType: {
       type: String,
       required: true,
-      enum: ['desayuno', 'almuerzo', 'cena', 'extra'],
+      enum: ['libreria', 'casino', 'extra'],
     },
     isUsed: {
       type: Boolean,
