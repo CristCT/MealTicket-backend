@@ -1,10 +1,12 @@
 import jwt from 'jsonwebtoken';
 
 const authMiddleware = (req, res, next) => {
+  const openRoutes = ['loginUser', 'registerUser'];
+  const query = req.body.query || '';
+
   if (
     req.method === 'POST' &&
-    req.body.query &&
-    req.body.query.includes('loginUser')
+    openRoutes.some((route) => query.includes(route))
   ) {
     return next();
   }

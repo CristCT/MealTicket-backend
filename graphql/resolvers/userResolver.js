@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../../models/User.js';
 import UserType from '../types/User.js';
-import { GraphQLString, GraphQLID } from 'graphql';
+import { GraphQLString, GraphQLList, GraphQLID } from 'graphql';
 
 const userResolver = {
   Query: {
@@ -11,6 +11,12 @@ const userResolver = {
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         return User.findById(args.id).populate('roles');
+      },
+    },
+    users: {
+      type: new GraphQLList(UserType),
+      resolve() {
+        return User.find().populate('roles');
       },
     },
   },
